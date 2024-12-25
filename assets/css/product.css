@@ -250,13 +250,16 @@ h2{
 }
 .desc{
     width: 80vw;
+    text-wrap: auto;
     max-width: 50rem;
     color: #7B7B7B;
     font-weight: 600;
     text-align: justify;
     margin-bottom: 5rem;
 }
-
+.desc b{
+    font-weight: 700;
+}
 @media screen and (max-width: 1200px) {
     section {
         gap: 2rem;

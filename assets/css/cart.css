@@ -70,6 +70,8 @@ section{
     width: 10.8rem;
     height: 9rem;
     background-color: #F5F5F5;
+    background-size: cover;
+    background-position: center;
     /* border-radius: 3%; */
     
 }

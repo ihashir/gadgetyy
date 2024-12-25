@@ -145,6 +145,12 @@ margin-bottom: 6vh;
     display: none;
   }
 
+.slider-products a{
+    color: black;
+    text-decoration: none;
+}
+
+
 .product{
     display: flex;
     flex-direction: column;
@@ -159,6 +165,8 @@ margin-bottom: 6vh;
     background-color: #F5F5F5;
     border-radius: 3%;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
     
 }
 
@@ -303,9 +311,14 @@ margin-bottom: 6vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     gap: 6rem;
     margin-top: 3rem;
+}
+.all-products a{
+    color: black;
+    text-decoration: none;
 }
 
 .all-products .product{

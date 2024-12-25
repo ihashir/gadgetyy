@@ -1,3 +1,6 @@
+
+
+
 var mob_menu_btn = document.querySelector(".fa-bars")
 var mob_menu = document.querySelector(".mob-menu")
 var mob_menu_close_btn = document.querySelector(".fa-close")
@@ -52,4 +55,20 @@ function leftScroll() {
     });
   }
 
-  
+
+
+function updateCartQty(){
+  document.querySelector(".fa-cart-shopping + span").innerHTML = cartQty
+}
+
+function calculateTotal(){
+  let tPrice = 0
+document.querySelectorAll(".totalPrice").forEach(node => {
+    let n = node.innerText
+    n = n.replace("PKR ", "")
+    tPrice += Number(n)
+    console.log(n)
+    
+})
+document.querySelector(".subTotal p").innerText = "PKR "+tPrice
+}

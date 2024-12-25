@@ -328,6 +328,7 @@ margin-bottom: 6vh;
     box-shadow: 0.5rem 0.2rem 0.7rem rgba(0, 0, 0, 0.250);
     transition: 0.2s all ease;
     cursor: pointer;
+    width: 300px;
 }
 
 .all-products .product:hover{

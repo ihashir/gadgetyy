@@ -12,7 +12,7 @@ const add_quantity = (product_id) =>{
         
         let newQty;
         newQty = Number(qty.innerText) + 1
-        
+        document.querySelector(`[id='${product_id}'] .removeItem`).setAttribute("onclick", `remove_cart(${product_id}, ${newQty})`)
         qty.innerHTML = newQty
         let price = document.querySelector(`[id='${product_id}'] .price`)
         let totalPrice = document.querySelector(`[id='${product_id}'] .totalPrice`)
@@ -50,6 +50,7 @@ const decrease_quantity = (product_id) =>{
         let newQty;
         newQty = Number(qty.innerText) - 1
         qty.innerHTML = newQty
+        document.querySelector(`[id='${product_id}'] .removeItem`).setAttribute("onclick", `remove_cart(${product_id}, ${newQty})`)
         let price = document.querySelector(`[id='${product_id}'] .price`)
         let totalPrice = document.querySelector(`[id='${product_id}'] .totalPrice`)
         let convertedPrice = price.innerText.replace("PKR ", "")

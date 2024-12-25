@@ -340,7 +340,7 @@ footer{
   font-size: 1.4rem;
 }
 
-.footer-content .social-col i:nth-child(1){
+.footer-content .social-col a:nth-child(1){
   font-size: 1.3rem;
 }
 

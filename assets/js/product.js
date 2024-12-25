@@ -12,7 +12,8 @@ if(searchParams.has('id')){
             let result = products.find(item => item.url === url_product_id);
             
             
-            
+            const mainImgUrl = result.image.substring(0, result.image.lastIndexOf('.'));
+            const mainImgNewUrl = `${mainImgUrl}_d.webp?maxwidth=1300`;
             let output = `
             <div class="imgContainer">
                         <div class="sideImgs">
@@ -22,14 +23,14 @@ if(searchParams.has('id')){
         
         
                             const newUrl = `${baseUrl}_d.webp?maxwidth=750`;
-                            return `<img src="${newUrl}" alt="">`
+                            return `<img onclick="swapWithMainImg(this, '${newUrl}')" src="${newUrl}") alt="">`
                         }
                         ).join('')}
-                            
+                        
                         </div>
                         <div class="mainImgDiv">
 
-                            <img src="${result.image}" alt="" class="mainImg">
+                            <img src="${mainImgNewUrl}" alt="" class="mainImg">
                         </div>
             `
             document.querySelector(".productInfo").innerHTML = output;
@@ -63,4 +64,15 @@ const add_quantity_plain = (product_id) => {
  document.querySelector(".quantity").innerHTML = changeQty
 document.querySelector(".addCartBtn").setAttribute("onclick",`add_to_cart('${product_id}', event, ${changeQty})`)
 
+}
+
+
+const swapWithMainImg = (img, imgUrl) => {
+    let mainImg = document.querySelector(".mainImg")
+    img.setAttribute("src", mainImg.getAttribute("src"))
+    img.setAttribute("onclick", `swapWithMainImg(this, '${mainImg.getAttribute("src")}')`)
+    mainImg.setAttribute("src", imgUrl)
+    
+    console.log(img)
+    console.log(imgUrl)
 }

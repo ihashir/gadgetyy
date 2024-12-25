@@ -11,7 +11,7 @@ http.onload = function(){
             
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
             let info = products[positionProduct];
-            let discount = Math.floor(((item.price - item.discountedPrice) / item.price) * 100);
+            let discount = Math.floor(((info.price - info.discountedPrice) / info.price) * 100);
             cartItem = cartItem + `<div class="cartItem" id="${info.id}">
                         <div class="product-img" style="background-image:url(${info.image});">
                             <span class="discount">-${discount}%</span>

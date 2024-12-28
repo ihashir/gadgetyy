@@ -29,6 +29,20 @@ http.onload = function(){
             
         })
         cartList.innerHTML = cartItem + "<h3>Empty Cart</h3>"
+        if(cartQty==0 && window.location.href.indexOf("cart") > -1){
+    
+            let emptyCart = document.querySelector(".cartList h3");
+          
+            emptyCart.style.display = "block"
+            
+            
+            
+          }
+          else if (cartQty!=0 && window.location.href.indexOf("cart") > -1){
+            let emptyCart = document.querySelector(".cartList h3");
+          
+            emptyCart.style.display = "none"
+          }
         }
         
    }

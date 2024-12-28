@@ -14,6 +14,24 @@ if(localStorage.getItem('cartQty')){
 setTimeout(() => {
     calculateTotal()
 }, 100);
+
+setTimeout(() => {
+    if(cartQty==0 && window.location.href.indexOf("cart") > -1){
+    
+        let emptyCart = document.querySelector(".cartList h3");
+      
+        emptyCart.style.display = "block"
+        
+        
+        
+      }
+      else if (cartQty!=0 && window.location.href.indexOf("cart") > -1){
+        let emptyCart = document.querySelector(".cartList h3");
+      
+        emptyCart.style.display = "none"
+      }
+}, 100);
+
 const add_to_cart = (product_id , e, productQty) => {
     cartQty = cartQty + productQty
     updateCartQty()

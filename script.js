@@ -57,9 +57,7 @@ function leftScroll() {
 
 
 
-function updateCartQty(){
-  document.querySelector(".fa-cart-shopping + span").innerHTML = cartQty
-}
+
 
 function calculateTotal(){
   let tPrice = 0
@@ -71,4 +69,19 @@ document.querySelectorAll(".totalPrice").forEach(node => {
     
 })
 document.querySelector(".subTotal p").innerText = "PKR "+tPrice
+}
+
+function updateCartQty(){
+  document.querySelector(".fa-cart-shopping + span").innerHTML = cartQty
+  if(cartQty==0 && window.location.href.indexOf("cart") > -1){
+    
+    let emptyCart = document.querySelector(".cartList h3");
+  
+    emptyCart.style.display = "block"
+  }
+  else if (cartQty!=0 && window.location.href.indexOf("cart") > -1){  
+    let emptyCart = document.querySelector(".cartList h3");
+  
+    emptyCart.style.display = "none"
+  }
 }

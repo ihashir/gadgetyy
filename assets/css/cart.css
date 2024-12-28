@@ -49,6 +49,9 @@ section{
     flex-direction: column;
     gap: 3rem;
 }
+.cartList h3{
+    text-align: center;
+}
 
 
 .cartItem{

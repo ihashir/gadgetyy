@@ -72,6 +72,7 @@ header .icons{
   font-size: 1.4rem;
 }
 a:has(.fa-cart-shopping){
+
   position: relative;
 }
 .fa-cart-shopping + span{
@@ -89,6 +90,7 @@ a:has(.fa-cart-shopping){
  display: flex;
  justify-content: center;
  align-items: center;
+ color: black;
 }
 header .icons i{
   transition: 0.2s all ease;

@@ -7,6 +7,7 @@ http.onload = function(){
     let cartItem = "" 
       let products = JSON.parse(this.responseText);
       if(cart.length > 0){
+       
         cart.forEach(item => {
             
             let positionProduct = products.findIndex((value) => value.id == item.product_id);
@@ -27,7 +28,7 @@ http.onload = function(){
                      </div>`
             
         })
-        cartList.innerHTML = cartItem
+        cartList.innerHTML = cartItem + "<h3>Empty Cart</h3>"
         }
         
    }
@@ -42,6 +43,7 @@ const remove_cart = (product_id , qty) =>{
         cart.splice(positionItemInCart, 1);
         
         document.querySelector(`[id='${product_id}']`).remove()
+        
         localStorage.setItem("cart", JSON.stringify(cart))
         cartQty -=qty
         localStorage.setItem('cartQty', cartQty);

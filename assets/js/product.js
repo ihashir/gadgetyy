@@ -44,7 +44,7 @@ if(searchParams.has('id')){
             document.querySelector(".desc").innerHTML = result.description
             document.querySelector(".addCartBtn").setAttribute("onclick",`add_to_cart('${result.id}', event, 1)`)
             document.querySelector(".quantityControl").innerHTML = ` <button onclick="decrease_quantity_plain('${result.id}')">-</button>
-                            <span class="quantity">0</span>
+                            <span class="quantity">1</span>
                             <button onclick="add_quantity_plain('${result.id}')">+</button>`
         }
     }
